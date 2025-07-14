@@ -13,7 +13,7 @@ export const YoutubeApiProvider = ({ children }: { children: ReactNode }) => {
   // Try to get API key from local storage if available
   const [apiKey, setApiKeyState] = useState<string>(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('youtube_api_key') || '';
+      return localStorage.getItem('youtube_api_key') || import.meta.env.VITE_YOUTUBE_API;
     }
     return '';
   });

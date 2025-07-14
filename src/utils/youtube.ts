@@ -13,9 +13,11 @@ export function extractYoutubeVideoId(url: string): string | null {
     /youtube\.com\/embed\/([^?&]+)/,
     // Mobile URL: https://m.youtube.com/watch?v=VIDEO_ID
     /m\.youtube\.com\/watch\?v=([^&]+)/,
+    // Shorts URL: https://www.youtube.com/shorts/VIDEO_ID
+    /youtube\.com\/shorts\/([^?&]+)/,
     // Direct video ID (if the user directly pastes a video ID)
     /^([a-zA-Z0-9_-]{11})$/
-  ];
+    ];
 
   for (const pattern of regexPatterns) {
     const match = url.match(pattern);
